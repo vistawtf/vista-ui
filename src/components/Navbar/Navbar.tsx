@@ -184,8 +184,8 @@ function NavbarRoot({ sticky = true, className, children }: NavbarProps) {
           'left-0 right-0 z-50 flex items-center transition-all duration-500',
           sticky ? 'fixed top-0' : 'relative',
           scrolled
-            ? 'h-14 bg-[var(--background)]/80 backdrop-blur-xl border-b border-[var(--border)]/50 shadow-sm'
-            : 'h-14 bg-transparent border-b border-transparent',
+            ? 'h-14 bg-[var(--background)] border-b border-[var(--border)] shadow-sm'
+            : 'h-14 bg-[var(--background)] border-b border-[var(--border)]/[0.08]',
           className
         )}
       >

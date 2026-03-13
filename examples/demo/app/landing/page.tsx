@@ -62,7 +62,7 @@ export default function LandingPage() {
         <Navbar.MobileMenu />
       </Navbar>
 
-      <Hero>
+      <Hero className="min-h-[90vh]">
         <Hero.Kicker>AI Infrastructure</Hero.Kicker>
         <Hero.Title>
           Ship AI features <u style={{ textDecorationColor: 'var(--ultra-orange)', textDecorationThickness: '2px', textUnderlineOffset: '0.2em' }}>faster</u>
