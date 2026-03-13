@@ -1,2 +1,5 @@
 @import "tailwindcss";
 @import "@vistawtf/ui/styles.css";
+
+/* Scan vista-ui dist for Tailwind classes used in component JSX */
+@source "../node_modules/@vistawtf/ui/dist";
