@@ -1,0 +1,288 @@
+@import "tailwindcss";
+
+/* ========================================
+   VISTA DESIGN SYSTEM — CSS CUSTOM PROPERTIES
+   ======================================== */
+
+:root {
+  /* Light Mode (Default) */
+  --background: #FAFAFA;
+  --foreground: #111111;
+  --surface: #FAFAFA;
+  --surface-hover: #F5F5F5;
+  --border: #E4E2D8;
+  --border-hover: #CCCCCC;
+  --muted: #666666;
+  --muted-light: #888888;
+
+  /* Vista Brand Colors */
+  --ultra-orange: #FF5233;
+  --medium-orange: #FF7043;
+  --light-orange: #FF8A65;
+  --ultra-blue: #2962FF;
+  --medium-blue: #448AFF;
+  --light-blue: #90CAF9;
+  --ultra-purple: #BA68C8;
+  --medium-purple: #EA80FC;
+  --light-purple: #CE93D8;
+  --medium-lime: #B2FF59;
+  --light-lime: #C5E1A5;
+
+  /* Spacing — 8px grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+}
+
+.dark {
+  --background: #111111;
+  --foreground: #E4E2D8;
+  --surface: #161616;
+  --surface-hover: #1a1a1a;
+  --border: #2a2a2a;
+  --border-hover: #575757;
+  --muted: #888888;
+  --muted-light: #666666;
+}
+
+/* ========================================
+   TAILWIND v4 THEME INLINE
+   ======================================== */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-muted: var(--muted);
+  --color-muted-light: var(--muted-light);
+  --color-ultra-orange: var(--ultra-orange);
+  --color-medium-orange: var(--medium-orange);
+  --color-light-orange: var(--light-orange);
+  --color-ultra-blue: var(--ultra-blue);
+  --color-medium-blue: var(--medium-blue);
+  --color-light-blue: var(--light-blue);
+  --color-ultra-purple: var(--ultra-purple);
+  --color-medium-purple: var(--medium-purple);
+  --color-light-purple: var(--light-purple);
+  --color-medium-lime: var(--medium-lime);
+  --color-light-lime: var(--light-lime);
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), 'SF Mono', Monaco, monospace;
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+/* ========================================
+   TYPOGRAPHY SYSTEM
+   ======================================== */
+
+.vista-text-display {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.vista-text-h1 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.vista-text-h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.vista-text-body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.vista-text-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.vista-text-body-sm {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.vista-text-caption {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.vista-text-label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   SECTION SPACING
+   ======================================== */
+
+.vista-section {
+  padding-top: clamp(80px, 10vh, 128px);
+  padding-bottom: clamp(80px, 10vh, 128px);
+}
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
+.vista-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 640px) {
+  .vista-container { padding: 0 20px; }
+}
+
+@media (min-width: 1024px) {
+  .vista-container { padding: 0 32px; }
+}
+
+@media (min-width: 1280px) {
+  .vista-container { padding: 0 40px; }
+}
+
+/* ========================================
+   SPINNER ANIMATION (for Button loading)
+   ======================================== */
+
+@keyframes vista-spin {
+  to { transform: rotate(360deg); }
+}
+
+.vista-spinner {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: vista-spin 0.6s linear infinite;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes vista-fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vista-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ========================================
+   SELECTION
+   ======================================== */
+
+::selection {
+  background: rgba(255, 82, 51, 0.3);
+  color: var(--foreground);
+}
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-hover);
+}
+
+/* ========================================
+   FAQ ACCORDION TRANSITION
+   ======================================== */
+
+.vista-faq-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vista-faq-content[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.vista-faq-content > div {
+  overflow: hidden;
+}
+
+/* ========================================
+   MOBILE MENU OVERLAY
+   ======================================== */
+
+.vista-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: var(--background);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vista-mobile-overlay[data-open="true"] {
+  opacity: 1;
+  visibility: visible;
+}
