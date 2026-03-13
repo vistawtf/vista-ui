@@ -47,6 +47,8 @@ function Item({ question, answer, children, defaultOpen = false, className }: FA
       >
         <span className="text-[1rem] font-medium text-[var(--foreground)] pr-4">{question}</span>
         <svg
+          width="20"
+          height="20"
           className={cn(
             'w-5 h-5 text-[var(--muted)] shrink-0 transition-transform duration-300 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]',
             isOpen && 'rotate-45'

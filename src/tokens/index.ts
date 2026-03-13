@@ -75,7 +75,7 @@ export const transitions = {
 export const typography = {
   display: {
     fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-    fontWeight: 500,
+    fontWeight: 400,
     lineHeight: 1.1,
     letterSpacing: '-0.02em',
   },
@@ -97,6 +97,10 @@ export const typography = {
   bodyLg: {
     fontSize: '1.125rem',
     lineHeight: 1.6,
+  },
+  bodyMd: {
+    fontSize: '0.9375rem',
+    lineHeight: 1.55,
   },
   bodySm: {
     fontSize: '0.875rem',

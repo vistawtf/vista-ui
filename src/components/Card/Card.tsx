@@ -145,13 +145,13 @@ function PricingCard({
     >
       <span className="vista-text-label text-[var(--muted)] mb-3">{plan}</span>
       <div className="flex items-baseline gap-1 mb-6">
-        <span className="text-[2.5rem] font-medium text-[var(--foreground)] leading-none tracking-tight">{price}</span>
+        <span className="text-[2rem] md:text-[2.5rem] font-medium text-[var(--foreground)] leading-none tracking-tight">{price}</span>
         {period && <span className="text-[var(--muted)] text-sm">{period}</span>}
       </div>
       <ul className="flex flex-col gap-3 mb-8 flex-1">
         {features.map((feature, i) => (
           <li key={i} className="flex items-start gap-2.5 text-[0.875rem] text-[var(--foreground)]">
-            <svg className="w-4 h-4 mt-0.5 text-[var(--ultra-orange)] shrink-0" viewBox="0 0 16 16" fill="none">
+            <svg width="16" height="16" className="w-4 h-4 mt-0.5 text-[var(--ultra-orange)] shrink-0" viewBox="0 0 16 16" fill="none">
               <path d="M3 8l3.5 3.5L13 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             {feature}

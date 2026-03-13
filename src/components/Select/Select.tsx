@@ -65,6 +65,8 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           </select>
           {/* Chevron */}
           <svg
+            width="16"
+            height="16"
             className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)] pointer-events-none"
             viewBox="0 0 16 16"
             fill="none"

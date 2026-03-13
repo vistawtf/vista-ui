@@ -6,6 +6,10 @@ export interface FooterLink {
 }
 
 export interface FooterSocial {
+  /**
+   * Social icon element. SVGs should include explicit `width` and `height`
+   * attributes (e.g. `width="20" height="20"`) for resilience when CSS hasn't loaded.
+   */
   icon: React.ReactNode;
   href: string;
   label: string;

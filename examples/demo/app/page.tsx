@@ -30,7 +30,7 @@ const examples = [
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-[var(--background)]">
-      <div className="vista-container py-24">
+      <div className="vista-container pt-[140px] pb-24">
         <div className="max-w-[640px] mb-16">
           <span className="vista-text-label text-[var(--ultra-orange)] mb-4 block">
             @vistawtf/ui

@@ -98,6 +98,8 @@ export default function BlogPage() {
         </div>
       </section>
 
+      <SectionDivider />
+
       <Footer>
         <Footer.CTA
           title="Stay in the loop."

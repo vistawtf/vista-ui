@@ -107,7 +107,7 @@ body {
 
 .vista-text-display {
   font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
@@ -116,6 +116,13 @@ body {
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 500;
   line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.vista-text-h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.15;
   letter-spacing: -0.01em;
 }
 
@@ -133,6 +140,11 @@ body {
 .vista-text-body-lg {
   font-size: 1.125rem;
   line-height: 1.6;
+}
+
+.vista-text-body-md {
+  font-size: 0.9375rem;
+  line-height: 1.55;
 }
 
 .vista-text-body-sm {
@@ -159,8 +171,8 @@ body {
    ======================================== */
 
 .vista-section {
-  padding-top: clamp(80px, 10vh, 128px);
-  padding-bottom: clamp(80px, 10vh, 128px);
+  padding-top: clamp(100px, 12vh, 140px);
+  padding-bottom: clamp(72px, 9vh, 90px);
 }
 
 /* ========================================
@@ -171,19 +183,11 @@ body {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 24px;
 }
 
-@media (min-width: 640px) {
-  .vista-container { padding: 0 20px; }
-}
-
-@media (min-width: 1024px) {
-  .vista-container { padding: 0 32px; }
-}
-
-@media (min-width: 1280px) {
-  .vista-container { padding: 0 40px; }
+@media (min-width: 768px) {
+  .vista-container { padding: 0 64px; }
 }
 
 /* ========================================

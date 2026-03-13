@@ -48,13 +48,13 @@ function Links({ items, className }: NavbarLinksProps) {
   }, [items, setLinks]);
 
   return (
-    <nav className={cn('hidden md:flex items-center gap-6', className)}>
+    <nav className={cn('hidden lg:flex items-center gap-8', className)}>
       {items.map((item) => (
         <a
           key={item.href}
           href={item.href}
           className={cn(
-            'relative text-[0.875rem] transition-colors duration-200 pb-[2px]',
+            'relative text-base font-medium transition-colors duration-200 pb-[2px]',
             item.active
               ? 'text-[var(--foreground)] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-[var(--ultra-orange)] after:scale-x-100'
               : 'text-[var(--muted)] hover:text-[var(--foreground)] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-[var(--ultra-orange)] after:scale-x-0 after:origin-left after:transition-transform after:duration-300'
@@ -73,7 +73,7 @@ function CTA({ href, variant = 'primary', className, children }: NavbarCTAProps)
     <a
       href={href}
       className={cn(
-        'hidden md:inline-flex items-center justify-center px-5 py-2 text-[0.8125rem] font-medium tracking-[0.02em] rounded-[3px] transition-all duration-200',
+        'hidden lg:inline-flex items-center justify-center px-6 py-2.5 text-base font-medium tracking-normal rounded-[3px] transition-all duration-200',
         isPrimary
           ? 'bg-[var(--ultra-orange)] text-white hover:bg-[var(--medium-orange)] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(255,82,51,0.25)]'
           : 'border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]',
@@ -92,7 +92,7 @@ function MobileMenu() {
     <>
       {/* Hamburger */}
       <button
-        className="md:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] cursor-pointer"
+        className="lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] cursor-pointer"
         onClick={() => setMobileOpen(!mobileOpen)}
         aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
         aria-expanded={mobileOpen}

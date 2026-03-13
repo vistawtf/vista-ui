@@ -12,7 +12,7 @@ import type {
 
 function CTA({ title, ctaText, ctaHref, secondaryText, secondaryHref, className }: FooterCTAProps) {
   return (
-    <div className={cn('py-10 px-6 border-b border-white/[0.08]', className)}>
+    <div className={cn('py-8 md:py-10 px-6 border-b border-white/[0.08]', className)}>
       <p className="text-xs uppercase tracking-[0.12em] text-white/50 mb-3 font-mono">
         Ready to work together?
       </p>
@@ -43,8 +43,9 @@ function Columns({ className, children }: FooterColumnsProps) {
   return (
     <div
       className={cn(
-        'grid grid-cols-1 md:grid-cols-4 gap-0 mb-12 px-0 relative',
+        'grid grid-cols-1 md:[grid-template-columns:repeat(4,minmax(0,1fr))] gap-0 mb-12 px-0 relative',
         'after:absolute after:bottom-0 after:left-0 after:right-0 after:h-px after:bg-white/[0.08]',
+        '[&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:md:border-b-0 [&>*:not(:last-child)]:border-white/[0.08]',
         className
       )}
     >
@@ -57,7 +58,7 @@ function Column({ title, links, className }: FooterColumnProps) {
   return (
     <div
       className={cn(
-        'py-8 md:py-10 px-6 border-b md:border-b-0 md:border-r border-white/[0.08] last:border-r-0 last:border-b-0',
+        'py-8 md:py-10 px-6 md:border-r md:border-white/[0.08] last:md:border-r-0',
         className
       )}
     >

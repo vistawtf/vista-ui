@@ -42,7 +42,7 @@ function Subtitle({ className, children }: HeroSubtitleProps) {
   return (
     <p
       className={cn(
-        'text-[16px] md:text-[20px] text-[var(--muted)] leading-[1.6] max-w-[540px] mt-4',
+        'text-[16px] md:text-[20px] text-[var(--muted)] leading-[1.6] max-w-[480px] md:max-w-[540px] mt-2',
         className
       )}
     >
@@ -53,7 +53,7 @@ function Subtitle({ className, children }: HeroSubtitleProps) {
 
 function Actions({ className, children }: HeroActionsProps) {
   return (
-    <div className={cn('flex flex-col sm:flex-row gap-4 mt-9', className)}>
+    <div className={cn('flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-9', className)}>
       {children}
     </div>
   );

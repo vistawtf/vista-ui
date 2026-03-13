@@ -39,7 +39,7 @@ export default function ToolPage() {
   return (
     <div className="min-h-screen flex bg-[var(--background)]">
       {/* Sidebar */}
-      <aside className="w-64 border-r border-[var(--border)] bg-[var(--surface)] flex flex-col shrink-0">
+      <aside className="w-64 border-r border-[var(--border)] bg-[var(--surface)] flex flex-col shrink-0 sticky top-0 h-screen overflow-y-auto">
         <div className="p-6 border-b border-[var(--border)]">
           <span className="text-[1.125rem] font-medium text-[var(--foreground)]">Aura</span>
           <span className="ml-2 text-[0.75rem] text-[var(--muted)]">Dashboard</span>
@@ -74,7 +74,7 @@ export default function ToolPage() {
       {/* Main */}
       <main className="flex-1 overflow-auto">
         {/* Header */}
-        <header className="border-b border-[var(--border)] px-8 py-4 flex items-center justify-between">
+        <header className="border-b border-[var(--border)] px-8 py-4 flex items-center justify-between sticky top-0 bg-[var(--background)] z-10">
           <h1 className="vista-text-h1 text-[var(--foreground)]">Dashboard</h1>
           <div className="flex gap-3">
             <Button variant="secondary" size="sm">Export</Button>
