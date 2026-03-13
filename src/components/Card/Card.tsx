@@ -70,7 +70,7 @@ function ArticleCard({ image, category, date, title, excerpt, href, className }:
       )}
       <div className="flex items-center gap-2 mb-3">
         {category && (
-          <span className="text-[0.625rem] font-semibold tracking-[0.08em] uppercase text-[var(--ultra-orange)] px-2 py-[3px] border border-[var(--ultra-orange)]/20 rounded-[4px] bg-[var(--ultra-orange)]/[0.04]">
+          <span className="text-[0.625rem] font-semibold tracking-[0.08em] uppercase text-[var(--ultra-orange)] px-2 py-[3px] border border-[rgba(255,82,51,0.2)] rounded-[4px] bg-[rgba(255,82,51,0.04)]">
             {category}
           </span>
         )}

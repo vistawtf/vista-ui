@@ -4,12 +4,13 @@ import type { SectionHeaderProps } from './SectionHeader.types';
 
 export function SectionHeader({ number, label, className }: SectionHeaderProps) {
   return (
-    <div className={cn('flex items-center gap-4 mb-[clamp(32px,5vh,48px)]', className)}>
+    <div className={cn('flex items-center gap-4', className)}>
       {number && (
-        <span className="text-[0.6875rem] font-mono font-medium tracking-[0.08em] text-[var(--muted-light)]">
+        <span className="vista-text-label text-[var(--muted)] font-mono">
           {number}
         </span>
       )}
+      <div className="flex-1 h-px bg-[var(--border)]" />
       <span className="vista-text-label text-[var(--muted)]">{label}</span>
     </div>
   );
