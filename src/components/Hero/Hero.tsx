@@ -126,7 +126,7 @@ function HeroRoot({
         className
       )}
     >
-      <div className="relative z-10 w-full vista-container pt-[100px] md:pt-[120px] pb-[80px] md:pb-[100px]">
+      <div className="relative z-10 w-full vista-container pt-[160px] md:pt-[180px] pb-[80px] md:pb-[100px]">
         <div className="max-w-[560px] md:max-w-[640px]">
           {hasChildren ? (
             children
