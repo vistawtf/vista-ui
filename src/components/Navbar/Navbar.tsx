@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, createContext, useContext } from 'react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import type {
   NavbarProps,
@@ -90,47 +91,39 @@ function MobileMenu() {
 
   return (
     <>
-      {/* Hamburger */}
+      {/* Toggle button — bordered square, lucide icons */}
       <button
-        className="lg:hidden flex flex-col justify-center items-center w-8 h-8 gap-[5px] cursor-pointer"
         onClick={() => setMobileOpen(!mobileOpen)}
-        aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+        className="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-[var(--border)] rounded-[3px] text-[var(--foreground)] transition-colors duration-200 hover:bg-[var(--surface-hover)]"
+        aria-label="Toggle menu"
         aria-expanded={mobileOpen}
       >
-        <span
-          className={cn(
-            'block w-5 h-[1.5px] bg-[var(--foreground)] transition-all duration-300',
-            mobileOpen && 'rotate-45 translate-y-[6.5px]'
-          )}
-        />
-        <span
-          className={cn(
-            'block w-5 h-[1.5px] bg-[var(--foreground)] transition-all duration-300',
-            mobileOpen && 'opacity-0'
-          )}
-        />
-        <span
-          className={cn(
-            'block w-5 h-[1.5px] bg-[var(--foreground)] transition-all duration-300',
-            mobileOpen && '-rotate-45 -translate-y-[6.5px]'
-          )}
-        />
+        {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
       </button>
+    </>
+  );
+}
 
-      {/* Overlay */}
-      <div
-        className="vista-mobile-overlay"
-        data-open={mobileOpen}
-        aria-hidden={!mobileOpen}
-      >
-        <nav className="flex flex-col items-center justify-center h-full gap-8 px-6">
+/* Dropdown panel — rendered inside NavbarRoot below the main bar */
+function MobileDropdown() {
+  const { mobileOpen, setMobileOpen, links } = useNavbar();
+
+  return (
+    <div
+      className={cn(
+        'lg:hidden overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]',
+        mobileOpen ? 'max-h-[400px] opacity-100 pb-5 pt-2' : 'max-h-0 opacity-0 pb-0 pt-0'
+      )}
+    >
+      <div className="border-t border-[var(--border)]/[0.08] vista-container">
+        <div className="flex flex-col gap-4 pt-4">
           {links.map((item) => (
             <a
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}
               className={cn(
-                'text-2xl font-medium transition-colors duration-200',
+                'text-[17px] py-1 transition-colors duration-200',
                 item.active
                   ? 'text-[var(--ultra-orange)]'
                   : 'text-[var(--foreground)] hover:text-[var(--ultra-orange)]'
@@ -139,9 +132,9 @@ function MobileMenu() {
               {item.label}
             </a>
           ))}
-        </nav>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
@@ -181,17 +174,18 @@ function NavbarRoot({ sticky = true, className, children }: NavbarProps) {
     <NavbarContext.Provider value={{ scrolled, mobileOpen, setMobileOpen, links, setLinks }}>
       <header
         className={cn(
-          'left-0 right-0 z-50 flex items-center transition-all duration-500',
+          'left-0 right-0 z-50 transition-all duration-500',
           sticky ? 'fixed top-0' : 'relative',
           scrolled
-            ? 'h-14 bg-[var(--background)] border-b border-[var(--border)] shadow-sm'
-            : 'h-14 bg-[var(--background)] border-b border-[var(--border)]/[0.08]',
+            ? 'bg-[var(--background)] border-b border-[var(--border)] shadow-sm'
+            : 'bg-[var(--background)] border-b border-[var(--border)]/[0.08]',
           className
         )}
       >
-        <div className="vista-container flex items-center justify-between">
+        <div className="vista-container flex items-center justify-between h-14">
           {children}
         </div>
+        <MobileDropdown />
       </header>
     </NavbarContext.Provider>
   );
@@ -204,4 +198,5 @@ export const Navbar = Object.assign(NavbarRoot, {
   Links,
   CTA,
   MobileMenu,
+  MobileDropdown,
 });
