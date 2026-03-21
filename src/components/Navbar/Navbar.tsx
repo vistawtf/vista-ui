@@ -57,8 +57,8 @@ function Links({ items, className }: NavbarLinksProps) {
           className={cn(
             'relative vista-text-body-sm transition-colors duration-200 pb-[2px]',
             item.active
-              ? 'text-[var(--foreground)] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-[var(--ultra-orange)] after:scale-x-100'
-              : 'text-[var(--muted)] hover:text-[var(--foreground)] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-[var(--ultra-orange)] after:scale-x-0 after:origin-left after:transition-transform after:duration-300'
+              ? 'text-[var(--text-primary)] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-[var(--ultra-orange)] after:scale-x-100'
+              : 'text-[var(--text-muted)] hover:text-[var(--text-primary)] after:absolute after:bottom-[-2px] after:left-0 after:w-full after:h-[1.5px] after:bg-[var(--ultra-orange)] after:scale-x-0 after:origin-left after:transition-transform after:duration-300'
           )}
         >
           {item.label}
@@ -74,10 +74,10 @@ function CTA({ href, variant = 'primary', className, children }: NavbarCTAProps)
     <a
       href={href}
       className={cn(
-        'hidden lg:inline-flex items-center justify-center px-5 py-2 vista-text-body-sm font-medium tracking-[0.02em] rounded-[3px] transition-all duration-200',
+        'hidden lg:inline-flex items-center justify-center px-5 py-2 text-[0.75rem] font-[var(--font-mono)] uppercase tracking-[0.06em] rounded-[3px] transition-all duration-200',
         isPrimary
-          ? 'bg-[var(--ultra-orange)] text-white hover:bg-[var(--medium-orange)] hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(255,82,51,0.25)]'
-          : 'border border-[var(--border)] text-[var(--foreground)] hover:border-[var(--border-hover)] hover:bg-[var(--surface-hover)]',
+          ? 'bg-[var(--ultra-orange)] text-white hover:bg-[var(--medium-orange)]'
+          : 'border border-[var(--border)] text-[var(--text-primary)] hover:border-[var(--border-hover)] hover:bg-[var(--card-bg)]',
         className
       )}
     >
@@ -87,14 +87,13 @@ function CTA({ href, variant = 'primary', className, children }: NavbarCTAProps)
 }
 
 function MobileMenu() {
-  const { mobileOpen, setMobileOpen, links } = useNavbar();
+  const { mobileOpen, setMobileOpen } = useNavbar();
 
   return (
     <>
-      {/* Toggle button — bordered square, lucide icons */}
       <button
         onClick={() => setMobileOpen(!mobileOpen)}
-        className="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-[var(--border)] rounded-[3px] text-[var(--foreground)] transition-colors duration-200 hover:bg-[var(--surface-hover)]"
+        className="lg:hidden inline-flex items-center justify-center w-10 h-10 border border-[var(--border)] rounded-[3px] text-[var(--text-primary)] transition-colors duration-200 hover:bg-[var(--card-bg)]"
         aria-label="Toggle menu"
         aria-expanded={mobileOpen}
       >
@@ -104,7 +103,6 @@ function MobileMenu() {
   );
 }
 
-/* Dropdown panel — rendered inside NavbarRoot below the main bar */
 function MobileDropdown() {
   const { mobileOpen, setMobileOpen, links } = useNavbar();
 
@@ -115,7 +113,7 @@ function MobileDropdown() {
         mobileOpen ? 'max-h-[400px] opacity-100 pb-5 pt-2' : 'max-h-0 opacity-0 pb-0 pt-0'
       )}
     >
-      <div className="border-t border-[var(--border)]/[0.08] vista-container">
+      <div className="border-t border-[var(--border)] vista-container">
         <div className="flex flex-col gap-4 pt-4">
           {links.map((item) => (
             <a
@@ -126,7 +124,7 @@ function MobileDropdown() {
                 'text-[17px] py-1 transition-colors duration-200',
                 item.active
                   ? 'text-[var(--ultra-orange)]'
-                  : 'text-[var(--foreground)] hover:text-[var(--ultra-orange)]'
+                  : 'text-[var(--text-primary)] hover:text-[var(--ultra-orange)]'
               )}
             >
               {item.label}
@@ -177,8 +175,8 @@ function NavbarRoot({ sticky = true, className, children }: NavbarProps) {
           'left-0 right-0 z-50 transition-all duration-500',
           sticky ? 'fixed top-0' : 'relative',
           scrolled
-            ? 'bg-[var(--background)] border-b border-[var(--border)] shadow-sm'
-            : 'bg-[var(--background)] border-b border-[var(--border)]/[0.08]',
+            ? 'bg-[var(--background)] border-b border-[var(--border)]'
+            : 'bg-[var(--background)] border-b border-[var(--border)]',
           className
         )}
       >

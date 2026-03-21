@@ -1,11 +1,19 @@
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import { Instrument_Serif } from 'next/font/google';
 import './globals.css';
 
+const InstrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-instrument-serif',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: 'Vista UI Demo — Aura',
-  description: 'Example pages built with @vistawtf/ui components',
+  title: 'Vista UI — Component Library',
+  description: 'Vista Design System component showcase',
 };
 
 export default function RootLayout({
@@ -14,8 +22,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="antialiased font-sans bg-[var(--background)] text-[var(--foreground)]">
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable} ${InstrumentSerif.variable}`}
+    >
+      <body className="antialiased bg-[var(--background)] text-[var(--text-primary)]">
         {children}
       </body>
     </html>

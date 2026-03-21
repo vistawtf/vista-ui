@@ -1,24 +1,27 @@
 /**
- * Vista Design Tokens
+ * Vista Design Tokens — v2
  *
  * These mirror the CSS custom properties in styles.css.
  * Use them for programmatic access to the design system values.
  */
 
 export const colors = {
+  // Neutrals
+  vistaBlack: 'var(--vista-black)',
+  vistaLight: 'var(--vista-light)',
+  ultraGray: 'var(--ultra-gray)',
+  idleGray: 'var(--idle-gray)',
+  mediumGray: 'var(--medium-gray)',
+  lightGray: 'var(--light-gray)',
   background: 'var(--background)',
-  foreground: 'var(--foreground)',
-  surface: 'var(--surface)',
-  surfaceHover: 'var(--surface-hover)',
-  border: 'var(--border)',
-  borderHover: 'var(--border-hover)',
-  muted: 'var(--muted)',
-  mutedLight: 'var(--muted-light)',
+  cardBg: 'var(--card-bg)',
 
-  // Brand
+  // Primary
   ultraOrange: 'var(--ultra-orange)',
   mediumOrange: 'var(--medium-orange)',
   lightOrange: 'var(--light-orange)',
+
+  // Secondary (badges/states only)
   ultraBlue: 'var(--ultra-blue)',
   mediumBlue: 'var(--medium-blue)',
   lightBlue: 'var(--light-blue)',
@@ -27,12 +30,35 @@ export const colors = {
   lightPurple: 'var(--light-purple)',
   mediumLime: 'var(--medium-lime)',
   lightLime: 'var(--light-lime)',
+
+  // Text hierarchy
+  textPrimary: 'var(--text-primary)',
+  textSecondary: 'var(--text-secondary)',
+  textMuted: 'var(--text-muted)',
+  textDisabled: 'var(--text-disabled)',
+
+  // Borders
+  border: 'var(--border)',
+  borderHover: 'var(--border-hover)',
 } as const;
 
 export const colorValues = {
+  // Neutrals
+  vistaBlack: '#111111',
+  vistaLight: '#E4E2D8',
+  ultraGray: '#191919',
+  idleGray: '#2D2D2D',
+  mediumGray: '#575757',
+  lightGray: '#999999',
+  background: '#FAFAFA',
+  cardBg: '#F2F2F2',
+
+  // Primary
   ultraOrange: '#FF5233',
   mediumOrange: '#FF7043',
   lightOrange: '#FF8A65',
+
+  // Secondary
   ultraBlue: '#2962FF',
   mediumBlue: '#448AFF',
   lightBlue: '#90CAF9',
@@ -41,28 +67,34 @@ export const colorValues = {
   lightPurple: '#CE93D8',
   mediumLime: '#B2FF59',
   lightLime: '#C5E1A5',
+
+  // Text
+  textPrimary: '#111111',
+  textSecondary: '#444444',
+  textMuted: '#888888',
+  textDisabled: '#BBBBBB',
+
+  // Borders
+  border: 'rgba(0,0,0,0.08)',
+  borderHover: 'rgba(0,0,0,0.14)',
 } as const;
 
 export const spacing = {
-  1: '4px',
-  2: '8px',
-  3: '12px',
-  4: '16px',
-  5: '20px',
-  6: '24px',
-  8: '32px',
-  10: '40px',
-  12: '48px',
-  16: '64px',
-  20: '80px',
-  24: '96px',
+  1: '4px',   // --sp-1
+  2: '8px',   // --sp-2
+  3: '12px',  // --sp-3
+  4: '16px',  // --sp-4
+  5: '24px',  // --sp-5
+  6: '40px',  // --sp-6
+  7: '64px',  // --sp-7
+  8: '96px',  // --sp-8
 } as const;
 
 export const radii = {
   button: '3px',
-  card: '10px',
-  input: '4px',
-  badge: '4px',
+  card: '3px',
+  input: '3px',
+  badge: '3px',
 } as const;
 
 export const transitions = {
@@ -73,6 +105,10 @@ export const transitions = {
 } as const;
 
 export const typography = {
+  fontSans: 'var(--font-sans)',
+  fontMono: 'var(--font-mono)',
+  fontSerif: 'var(--font-serif)',
+
   display: {
     fontSize: 'clamp(2.5rem, 5vw, 4rem)',
     fontWeight: 500,
@@ -83,6 +119,12 @@ export const typography = {
     fontSize: 'clamp(1.75rem, 3vw, 2.25rem)',
     fontWeight: 500,
     lineHeight: 1.2,
+    letterSpacing: '-0.01em',
+  },
+  h2: {
+    fontSize: 'clamp(2rem, 4vw, 3rem)',
+    fontWeight: 500,
+    lineHeight: 1.15,
     letterSpacing: '-0.01em',
   },
   h3: {

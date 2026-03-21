@@ -3,14 +3,14 @@ import { cn } from '../../utils/cn';
 import type { BadgeProps } from './Badge.types';
 
 const variantStyles: Record<string, string> = {
-  default: 'bg-[var(--surface-hover)] text-[var(--foreground)] border border-[var(--border)] font-medium tracking-[0.02em]',
+  default: 'bg-[var(--card-bg)] text-[var(--text-primary)] border border-[var(--border)] tracking-[0.06em] uppercase',
   accent: [
-    'bg-[rgba(255,82,51,0.04)] dark:bg-[rgba(255,82,51,0.08)]',
+    'bg-[rgba(255,82,51,0.04)]',
     'text-[var(--ultra-orange)]',
-    'border border-[rgba(255,82,51,0.2)] dark:border-[rgba(255,82,51,0.15)]',
-    'font-semibold tracking-[0.08em] uppercase',
+    'border border-[rgba(255,82,51,0.2)]',
+    'tracking-[0.08em] uppercase',
   ].join(' '),
-  outline: 'bg-transparent text-[var(--foreground)] border border-[var(--border)] font-medium tracking-[0.02em]',
+  outline: 'bg-transparent text-[var(--text-primary)] border border-[var(--border)] tracking-[0.06em] uppercase',
 };
 
 const sizeStyles: Record<string, string> = {
@@ -27,7 +27,7 @@ export function Badge({
   return (
     <span
       className={cn(
-        'inline-flex items-center rounded-[4px] whitespace-nowrap',
+        'inline-flex items-center rounded-[3px] whitespace-nowrap font-[var(--font-mono)]',
         variantStyles[variant],
         sizeStyles[size],
         className

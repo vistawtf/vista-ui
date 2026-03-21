@@ -29,7 +29,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         {label && (
           <label
             htmlFor={textareaId}
-            className="vista-text-body-sm font-medium text-[var(--foreground)]"
+            className="vista-text-body-sm text-[var(--text-primary)]"
           >
             {label}
           </label>
@@ -39,9 +39,9 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           id={textareaId}
           rows={rows}
           className={cn(
-            'w-full rounded-[4px] border bg-[var(--surface-hover)] text-[var(--foreground)]',
+            'w-full rounded-[3px] border bg-[var(--card-bg)] text-[var(--text-primary)]',
             'px-4 py-3 text-[0.9375rem]',
-            'placeholder:text-[var(--muted)]',
+            'placeholder:text-[var(--text-muted)]',
             'transition-[border-color,box-shadow] duration-200',
             'focus:outline-none focus:border-[var(--ultra-orange)] focus:shadow-[0_0_0_3px_rgba(255,82,51,0.1)]',
             error
@@ -59,7 +59,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           </p>
         )}
         {hint && !error && (
-          <p id={`${textareaId}-hint`} className="text-[0.75rem] text-[var(--muted-light)]">
+          <p id={`${textareaId}-hint`} className="text-[0.75rem] text-[var(--text-muted)]">
             {hint}
           </p>
         )}

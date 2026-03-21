@@ -16,7 +16,7 @@ function Kicker({ className, children }: HeroKickerProps) {
   return (
     <span
       className={cn(
-        'vista-text-label text-[var(--muted)] mb-4 block',
+        'vista-text-label text-[var(--text-muted)] mb-4 block',
         className
       )}
     >
@@ -29,7 +29,7 @@ function Title({ className, children }: HeroTitleProps) {
   return (
     <h1
       className={cn(
-        'vista-text-display text-[var(--foreground)] max-w-[640px]',
+        'vista-text-display text-[var(--text-primary)] max-w-[640px]',
         className
       )}
     >
@@ -42,7 +42,7 @@ function Subtitle({ className, children }: HeroSubtitleProps) {
   return (
     <p
       className={cn(
-        'text-[16px] md:text-[20px] text-[var(--muted)] leading-[1.6] max-w-[480px] md:max-w-[540px] mt-2',
+        'text-[16px] md:text-[20px] text-[var(--text-muted)] leading-[1.6] max-w-[480px] md:max-w-[540px] mt-2',
         className
       )}
     >
@@ -62,7 +62,7 @@ function Actions({ className, children }: HeroActionsProps) {
 function TrustedBy({ logos, label = 'Trusted by', className }: HeroTrustedByProps) {
   return (
     <div className={cn('mt-10 md:mt-12', className)}>
-      <p className="text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--muted-light)] mb-2 md:mb-3 font-mono">
+      <p className="text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-[var(--text-muted)] mb-2 md:mb-3 font-[var(--font-mono)]">
         {label}
       </p>
       <div className="flex gap-6 md:gap-8 items-center">
@@ -116,7 +116,6 @@ function HeroRoot({
   className,
   children,
 }: HeroProps) {
-  // Compound API: if children are provided, render them
   const hasChildren = React.Children.count(children) > 0;
 
   return (
@@ -138,18 +137,12 @@ function HeroRoot({
               {(ctaText || ctaSecondaryText) && (
                 <Actions>
                   {ctaText && (
-                    <Button
-                      variant="primary"
-                      asChild
-                    >
+                    <Button variant="primary" asChild>
                       <a href={ctaHref || '#'}>{ctaText}</a>
                     </Button>
                   )}
                   {ctaSecondaryText && (
-                    <Button
-                      variant="secondary"
-                      asChild
-                    >
+                    <Button variant="secondary" asChild>
                       <a href={ctaSecondaryHref || '#'}>{ctaSecondaryText}</a>
                     </Button>
                   )}

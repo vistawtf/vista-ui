@@ -12,14 +12,14 @@ function Item({ number, icon, title, description, href, className }: FeaturesGri
   const content = (
     <div
       className={cn(
-        'relative p-8 border border-[var(--border)] rounded-[2px] bg-[var(--background)]',
+        'relative p-8 border border-[var(--border)] rounded-[3px] bg-[var(--background)]',
         'transition-all duration-300 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]',
-        'hover:-translate-y-[4px] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:border-[var(--ultra-orange)]',
+        'hover:border-[var(--border-hover)] hover:bg-[var(--card-bg)]',
         className
       )}
     >
       {number && (
-        <span className="absolute top-8 right-8 text-5xl font-semibold text-[var(--foreground)]/[0.08] font-mono">
+        <span className="absolute top-8 right-8 text-5xl text-[var(--text-primary)]/[0.06] font-[var(--font-mono)]">
           {number}
         </span>
       )}
@@ -28,10 +28,10 @@ function Item({ number, icon, title, description, href, className }: FeaturesGri
           {icon}
         </div>
       )}
-      <h3 className="text-[1.125rem] font-medium text-[var(--foreground)] mb-2">{title}</h3>
-      <p className="text-[0.875rem] leading-[1.6] text-[var(--muted)]">{description}</p>
+      <h3 className="text-[1.125rem] font-medium text-[var(--text-primary)] mb-2">{title}</h3>
+      <p className="text-[0.875rem] leading-[1.6] text-[var(--text-muted)]">{description}</p>
       {href && (
-        <span className="inline-block mt-4 text-[13px] font-mono font-medium uppercase tracking-[0.05em] text-[var(--muted)] hover:text-[var(--ultra-orange)] transition-colors">
+        <span className="inline-block mt-4 text-[13px] font-[var(--font-mono)] uppercase tracking-[0.06em] text-[var(--text-muted)] hover:text-[var(--ultra-orange)] transition-colors">
           Learn more →
         </span>
       )}
@@ -40,7 +40,7 @@ function Item({ number, icon, title, description, href, className }: FeaturesGri
 
   if (href) {
     return (
-      <a href={href} className="block text-inherit no-underline">
+      <a href={href} className="block text-inherit no-underline group">
         {content}
       </a>
     );
@@ -54,7 +54,7 @@ function FeaturesGridRoot({ title, columns = 3, className, children }: FeaturesG
     <section className={cn('vista-section bg-[var(--background)]', className)}>
       <div className="vista-container">
         {title && (
-          <h2 className="text-[36px] md:text-[48px] font-medium leading-tight text-[var(--foreground)] lowercase mb-12">
+          <h2 className="text-[36px] md:text-[48px] font-medium leading-tight text-[var(--text-primary)] lowercase mb-12">
             {title}
           </h2>
         )}

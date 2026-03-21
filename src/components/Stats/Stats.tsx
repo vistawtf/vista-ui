@@ -5,10 +5,10 @@ import type { StatsProps, StatsItemProps } from './Stats.types';
 function Item({ value, label, className }: StatsItemProps) {
   return (
     <div className={cn('text-center', className)}>
-      <div className="text-[clamp(2rem,4.5vw,3.25rem)] font-medium leading-[1.1] tracking-[-0.03em] text-[var(--foreground)] tabular-nums">
+      <div className="text-[clamp(2rem,4.5vw,3.25rem)] font-medium leading-[1.1] tracking-[-0.03em] text-[var(--text-primary)] tabular-nums">
         {value}
       </div>
-      <div className="mt-2 text-[0.875rem] text-[var(--muted)]">{label}</div>
+      <div className="mt-2 text-[0.875rem] text-[var(--text-muted)]">{label}</div>
     </div>
   );
 }

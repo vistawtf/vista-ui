@@ -28,7 +28,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
         {label && (
           <label
             htmlFor={selectId}
-            className="vista-text-body-sm font-medium text-[var(--foreground)]"
+            className="vista-text-body-sm text-[var(--text-primary)]"
           >
             {label}
           </label>
@@ -38,7 +38,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             ref={ref}
             id={selectId}
             className={cn(
-              'w-full rounded-[4px] border bg-[var(--surface-hover)] text-[var(--foreground)]',
+              'w-full rounded-[3px] border bg-[var(--card-bg)] text-[var(--text-primary)]',
               'appearance-none cursor-pointer',
               'transition-[border-color,box-shadow] duration-200',
               'focus:outline-none focus:border-[var(--ultra-orange)] focus:shadow-[0_0_0_3px_rgba(255,82,51,0.1)]',
@@ -67,7 +67,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           <svg
             width="16"
             height="16"
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)] pointer-events-none"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--text-muted)] pointer-events-none"
             viewBox="0 0 16 16"
             fill="none"
           >
